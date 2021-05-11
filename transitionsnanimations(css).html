@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transitions n animations</title>
+	<style>
+		#box1{
+			width: 200px;
+			height: 200px;
+			background-color: black;
+			transition:width 2s, height 2s;
+			transition-delay: 1s;
+			transition-timing-function: ease-in-out;
+		}
+		#box1:hover{
+			width: 300px;
+			height: 300px;
+			background-color: green;
+		}
+
+		#box2{
+			width: 100px;
+			height: 100px;
+			position: relative;
+			background-color: green;
+			animation-name: colorchange;
+			animation-duration: 5s;
+			animation-iteration-count: 5;
+			animation-direction: reverse;
+		}
+
+		/*@keyframes colorchange{
+			from{background-color: green;}
+			to{background-color: blue;}
+		}                       
+		the basic colorchange functionality syntax */
+
+		/*the advanced colorchange and locomotion funtionality syntax*/
+		 @keyframes colorchange{
+		 	0%{background-color: green; left: 0px;top: 0px;}
+		 	25%{background-color: blue;left: 200px;top: 0px;}
+		 	50%{background-color: red;left: 200px;top: 200px}
+		 	75%{background-color: black;left: 0px;top:200px;}
+		 	100%{background-color: pink;left: 0px;top:0px;}
+		 }		
+	</style>
+</head>
+<body>
+<div id="box1"></div>
+<br>
+<div id="box2"></div>
+</body>
+</html>

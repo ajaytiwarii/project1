@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS form validation</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">	
+
+	<h1 class="text center">register with us</h1>
+	<div class="alert" id="msg"></div>
+<form id="regform">
+  <div class="form grp">
+    <label> name</label>
+    <input type="text" class="form-control" id="name" name="name">
+  </div>
+<div class="form grp">
+    <label> email</label>
+    <input type="text" class="form-control" id="email" name="email">
+  </div>
+  <div class="form grp">
+    <label> password</label>
+    <input type="password" class="form-control" id="password" name="password">
+  </div>
+  <div class="form grp">
+    <label> password confirm</label>
+    <input type="password" class="form-control" id="password2" name="password2 ">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+<script>
+	function register(e)
+	{	
+		e.preventDefault();
+		var name= document.getElementById('name').value;
+		var email= document.getElementById('email').value;
+		var password= document.getElementById('password').value;
+		var password2= document.getElementById('password2').value;
+		var msg=document.getElementById('msg');
+
+		if(name== '' || email=='' ||password=='' || password2=='')
+		{
+			msg.className="alert alert-danger";
+			msg.innerHTML= 'please fill out all fields';
+		}
+		else{
+
+		if(name.length<3)
+		{
+			msg.className="alert alert-danger";
+			msg.innerHTML='name must be at least 3 characters long';
+		}
+
+		else{
+			var atpos=email.indexOf("@");
+			var dotpos=email.lastIndexOf(".");
+			if(atpos<1||dotpos<atpos+2||dotpos+2>=email.length)
+			{
+				msg.className="alert alert-danger";
+				msg.innerHTML='please use valid email';
+			}
+			else
+			{
+				if(password!=password2)
+				{
+					msg.className="alert alert-danger";
+				msg.innerHTML='please use matching password';
+				}	
+				else {
+					msg.className="alert alert-success";
+					msg.innerHTML=name+ ' is reg with email'+ email;
+				}
+					
+				}
+			}
+			}
+
+		}
+
+
+			
+		//console.log('submitted...');
+	
+	document.getElementById('regform').addEventListener('submit',register,false);
+</script> 
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>shadows</title>
+<style>
+	h1.text1{
+		color: red;
+		text-shadow: 2px 2px 5px black;
+	}
+	h1.text2{
+		color: blue;
+		text-shadow: 2px 2px 5px green;
+	}
+	h1.text3{
+		text-shadow: 0 0 3px red, 0 0 5px black; /*multiple shadow implementation*/
+	}
+
+	#box1{
+		width:300px;
+		height: 200px;
+		padding: 15px;
+		background-color: blue;
+		box-shadow: 10px 10px 10px grey;
+	}
+
+	.card{
+		width:250px;
+		box-shadow: 0 4px 8px red, 0 8px 8px grey;
+		text-align: center;
+	}
+	.card-header{
+		background-color: red;
+		color: grey;
+		padding: 10px;
+		font-size: 40px;
+	}
+	.card-container{
+		padding: 10px;
+	}
+</style>
+</head>
+
+<body>
+	<h1 class="text1">hola</h1>
+	<h1 class="text2">ciao</h1>
+	<h1 class="text3">ssup</h1>
+
+	<div id="box1"></div>
+	<br>
+	<div class="card">
+		<div class="card-header">
+			<h1>1</h1>
+		</div>
+		<div class="card-container">this is a card</div>
+	</div>
+</body>
+</html>
